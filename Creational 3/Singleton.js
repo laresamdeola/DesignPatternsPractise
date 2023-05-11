@@ -13,6 +13,3 @@ class Book {
 const thingsFallApart = new Book("Chinua Achebe", "Things Fall Apart", 1968);
 
 Object.freeze(thingsFallApart);
-
-console.log(thingsFallApart.author);
-console.log(thingsFallApart.displayBookTitle());
