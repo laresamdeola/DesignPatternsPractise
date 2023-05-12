@@ -1,27 +1,44 @@
-// In this design pattern, we build out the properties and methods into separate entities.
+// This design pattern allows us to create families of related classes without specifying a concrete class.
 
-const BookProperties = {
-  title: (object) => {return object.title},
-  author: (object) => {return object.author},
-  publicationDate: (object) => {return object.publicationDate}
-};
-
-const BookMethods = {
-  displayBook: (object) => {return object.title.toUpperCase()},
-  bookAge: (object) => {
-    let date = new Date().getFullYear();
-    return date - object.publicationDate;
+class Literature{
+  constructor(){
+    this.title = "";
+    this.author = "";
+    this.literature = true
   }
-};
 
-const wonodi = {
-  title: "Collections IV",
-  author: "Okogbule Wonodi",
-  publicationDate: 1978
+  display(){
+    return this.title + "--" + this.author;
+  }
 }
 
-console.log(BookProperties.title(wonodi));
-console.log(BookProperties.author(wonodi));
-console.log(BookProperties.publicationDate(wonodi));
-console.log(BookMethods.displayBook(wonodi));
-console.log(BookMethods.bookAge(wonodi));
+class Fiction {
+  constructor(){
+    this.title = "";
+    this.author = "";
+    this.literature = false;
+  }
+}
+
+const genreFactory = {
+  createGenre: (type) => {
+    type = type.toLowerCase();
+    switch(type){
+      case "literature":
+        return new Literature();
+        break;
+      case "fiction":
+        return new Fiction();
+        break;
+      default:
+        return "This genre isn't available yet";
+    }
+  }
+}
+
+const wonodi = genreFactory.createGenre("LITERATURE");
+wonodi.title = "Collections V";
+wonodi.author = "Okogbule Wonodi";
+wonodi.literature = true;
+
+console.log(wonodi.display());
