@@ -1,11 +1,11 @@
 class Musician {
-  constructor(artistName, genre){
+  constructor(){
     this.artistName = artistName;
     this.genre = genre;
   }
 
   artistInfo(){
-    return this.artistName + " " + this.genre;
+    return this.artistName + " " + this.artistInfo;
   }
 }
 
