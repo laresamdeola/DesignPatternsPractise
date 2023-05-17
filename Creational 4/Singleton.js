@@ -5,7 +5,7 @@ class Musician {
   }
 
   artistInfo(){
-    return this.artistName + " " + this.artistInfo;
+    return this.artistName + " " + this.genre;
   }
 }
 

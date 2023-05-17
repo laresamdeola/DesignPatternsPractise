@@ -1,16 +1,17 @@
-class Musician {
-  constructor(artistName, genre){
-    this.artistName = artistName;
-    this.genre = genre;
-  }
-
-  artistInfo(){
-    return this.artistName + " " + this.genre;
+const music = {
+  artistName: (object) => {
+ return object.name;
+},
+  artistGenre: (object) => {
+    return object.genre
   }
 }
 
-const fela = new Musician("Fela Anikulapo", "Afrobeat");
+const sade = {
+  name: "Sade",
+  genre: "Jazz Soul"
+}
 
-Object.freeze(fela);
+Object.setPrototypeOf(sade, music);
 
-console.log(fela.artistInfo());
+console.log(sade.artistName(sade));
