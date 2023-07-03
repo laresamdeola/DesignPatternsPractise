@@ -13,7 +13,7 @@ class Car {
   }
 }
 
-const toyota = new Car(4, "Toyota", "Carina", 2015);
+const toyota = new Car(4, "Lexus", "Carina", 2015);
 
 const audi = new Car(4, "Audi", "4s", "2009");
 
